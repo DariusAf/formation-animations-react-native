@@ -6,7 +6,11 @@ import { Page, Modal } from 'anibamtion/src/components';
 import styles from './Home.style';
 
 const Button = props => (
-  <TouchableOpacity style={styles.button} onPress={props.onPress}>
+  <TouchableOpacity
+    style={[styles.button, props.disabled && { backgroundColor: '#AAA' }]}
+    onPress={props.onPress}
+    disabled={props.disabled}
+  >
     <Text style={styles.buttonText}>{props.text}</Text>
   </TouchableOpacity>
 );
@@ -29,7 +33,7 @@ export default class Home extends Component {
 
   confirmOrder = () => {
     this.showModal();
-    setTimeout(this.hideModal, 1500)
+    setTimeout(this.hideModal, 1500);
   };
 
   render() {
@@ -47,7 +51,7 @@ export default class Home extends Component {
               <Text style={styles.subtitle}>Prix : 8€</Text>
             </View>
           </View>
-          <Button text="Valider" onPress={this.confirmOrder} />
+          <Button text="Valider" onPress={this.confirmOrder} disabled={this.state.isModalVisible} />
         </View>
         <Modal text="Commande validée !" visible={this.state.isModalVisible} />
       </Page>
