@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 import theme from 'anibamtion/src/theme';
 
 const mainColor = '#6c8aa7';
-const secondaryColor = '#455370';
 
 export default StyleSheet.create({
   container: {

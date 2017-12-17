@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 
-import { Page } from 'anibamtion/src/components';
+import { Page, Modal } from 'anibamtion/src/components';
 
 import styles from './Home.style';
 
@@ -38,6 +38,7 @@ export default class Home extends Component {
           </View>
           <Button text="Valider" />
         </View>
+        <Modal text="Commande validée !" />
       </Page>
     );
   }
