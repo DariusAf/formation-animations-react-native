@@ -6,7 +6,7 @@ import { Page, Modal } from 'anibamtion/src/components';
 import styles from './Home.style';
 
 const Button = props => (
-  <TouchableOpacity style={styles.button}>
+  <TouchableOpacity style={styles.button} onPress={props.onPress}>
     <Text style={styles.buttonText}>{props.text}</Text>
   </TouchableOpacity>
 );
@@ -19,6 +19,18 @@ export default class Home extends Component {
       borderBottomWidth: 0,
       backgroundColor: 'rgb(249,249,249)',
     },
+  };
+
+  state: StateType = {
+    isModalVisible: false,
+  };
+
+  showModal = () => this.setState({ isModalVisible: true });
+  hideModal = () => this.setState({ isModalVisible: false });
+
+  confirmOrder = () => {
+    this.showModal();
+    setTimeout(this.hideModal, 1500)
   };
 
   render() {
@@ -36,10 +48,14 @@ export default class Home extends Component {
               <Text style={styles.subtitle}>Prix : 8€</Text>
             </View>
           </View>
-          <Button text="Valider" />
+          <Button text="Valider" onPress={this.confirmOrder} />
         </View>
-        <Modal text="Commande validée !" />
+        <Modal text="Commande validée !" visible={this.state.isModalVisible} />
       </Page>
     );
   }
 }
+
+type StateType = {
+  isModalVisible: boolean,
+};

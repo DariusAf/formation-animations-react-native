@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -24,24 +24,49 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
     shadowColor: 'black',
     shadowOpacity: 0.1,
-    shadowOffset: {width: 0,height: 5}
+    shadowOffset: { width: 0, height: 5 },
   },
   text: {
     textAlign: 'center',
     backgroundColor: 'transparent',
     fontSize: 16,
-  }
+  },
 });
 
-export default (props: PropsType) => (
-  <View style={styles.container}>
-    <View style={styles.card}>
-      <Text style={styles.text}>{props.text}</Text>
-    </View>
-  </View>
-);
+export default class Modal extends Component {
+  props: PropsType;
+  state: StateType = {
+    visible: false,
+  };
+
+  show = () => this.setState({ visible: true });
+  hide = () => this.setState({ visible: false });
+
+  componentWillReceiveProps(newProps: PropsType) {
+    if (newProps.visible !== this.props.visible)
+      if (this.state.visible) this.hide();
+      else this.show();
+  }
+
+  render() {
+    return (
+      <View
+        style={[styles.container, !this.state.visible && { display: 'none' }]}
+        pointerEvents="none"
+      >
+        <View style={styles.card}>
+          <Text style={styles.text}>{this.props.text}</Text>
+        </View>
+      </View>
+    );
+  }
+}
 
 type PropsType = {
   text: string,
+  visible: boolean,
+};
+
+type StateType = {
   visible: boolean,
 };
