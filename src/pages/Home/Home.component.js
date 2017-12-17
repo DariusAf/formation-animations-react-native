@@ -14,7 +14,6 @@ const Button = props => (
 export default class Home extends Component {
   static navigationOptions = {
     title: 'Résumé de ma commande',
-    headerTitleStyle: { textAlign: 'center', alignSelf: 'center' },
     headerStyle: {
       borderBottomWidth: 0,
       backgroundColor: 'rgb(249,249,249)',

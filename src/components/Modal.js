@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+import { View as AnimatableView } from 'react-native-animatable';
+
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
@@ -34,30 +36,34 @@ const styles = StyleSheet.create({
 });
 
 export default class Modal extends Component {
+  containerRef: any;
   props: PropsType;
   state: StateType = {
     visible: false,
   };
 
-  show = () => this.setState({ visible: true });
-  hide = () => this.setState({ visible: false });
+  show = () => this.setState({ visible: true }, () => this.containerRef.fadeIn(500));
+  hide = () => this.containerRef.fadeOut(500).then(() => this.setState({ visible: false }));
 
   componentWillReceiveProps(newProps: PropsType) {
     if (newProps.visible !== this.props.visible)
-      if (this.state.visible) this.hide();
+      if (this.props.visible) this.hide();
       else this.show();
   }
 
   render() {
     return (
-      <View
+      <AnimatableView
         style={[styles.container, !this.state.visible && { display: 'none' }]}
         pointerEvents="none"
+        ref={ref => {
+          this.containerRef = ref;
+        }}
       >
         <View style={styles.card}>
           <Text style={styles.text}>{this.props.text}</Text>
         </View>
-      </View>
+      </AnimatableView>
     );
   }
 }
