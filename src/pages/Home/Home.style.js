@@ -3,7 +3,7 @@
 import { StyleSheet } from 'react-native';
 import theme from 'anibamtion/src/theme';
 
-const mainColor = '#6c8aa7';
+const mainColor = '#51dc77';
 
 export default StyleSheet.create({
   container: {
@@ -19,11 +19,14 @@ export default StyleSheet.create({
     fontWeight: '600',
     fontSize: 22,
     marginBottom: 5,
-    color: mainColor,
+    backgroundColor: '#FF0',
+    color: '#333',
+    padding: 5,
   },
   subtitle: {
     fontSize: 18,
     color: '#777',
+    padding: 5,
   },
   price: {
     color: mainColor,
@@ -35,11 +38,11 @@ export default StyleSheet.create({
   button: {
     padding: 10,
     backgroundColor: mainColor,
-    borderRadius: 3,
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
+    fontWeight: '600',
     textAlign: 'center',
   },
 });
