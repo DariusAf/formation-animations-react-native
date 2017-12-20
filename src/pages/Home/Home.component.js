@@ -3,7 +3,11 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 
 import { Page, Modal } from 'anibamtion/src/components';
 
-import { Text as AnimatableText } from 'react-native-animatable';
+import {
+  Text as AnimatableText,
+  View as AnimatableView,
+  Image as AnimatableImage,
+} from 'react-native-animatable';
 
 import styles from './Home.style';
 
@@ -32,7 +36,7 @@ export default class Home extends Component {
   };
 
   showModal = () => this.setState({ isModalVisible: true });
-  hideModal = () => this.setState({ isModalVisible: false, finished: true });
+  hideModal = () => this.setState({ isModalVisible: false, finished: !this.state.finished });
 
   confirmOrder = () => {
     this.showModal();
@@ -49,15 +53,25 @@ export default class Home extends Component {
                 style={[styles.title, this.state.finished && { color: '#51dc77' }]}
                 duration={1000}
                 transition={['color']}
+                delay={1500}
               >
                 Pizza quatre-fromages
               </AnimatableText>
+              <AnimatableView
+                style={[styles.bar, this.state.finished && { width: 228 }]}
+                duration={500}
+                transition={['width']}
+                delay={1000}
+              />
               <Text style={styles.subtitle}>Prix : 8€</Text>
             </View>
-            <Image
+            <AnimatableImage
               source={require('anibamtion/src/assets/pizza.png')}
-              style={{ width: 300, height: 200 }}
+              style={[styles.pizzaImage, this.state.finished && styles.activePizzaImage]}
               resizeMode="contain"
+              duration={500}
+              transition={['rotate']}
+              delay={3500}
             />
           </View>
           <Button text="Valider" onPress={this.confirmOrder} disabled={this.state.isModalVisible} />

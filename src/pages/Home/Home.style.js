@@ -19,7 +19,6 @@ export default StyleSheet.create({
     fontWeight: '600',
     fontSize: 22,
     marginBottom: 5,
-    backgroundColor: '#FF0',
     color: '#333',
     padding: 5,
   },
@@ -45,4 +44,28 @@ export default StyleSheet.create({
     fontWeight: '600',
     textAlign: 'center',
   },
+  bar: {
+    width: 0,
+    height: 4,
+    backgroundColor: mainColor,
+    position: 'absolute',
+    top: 30,
+    left: 5,
+  },
+  pizzaImage: {
+    width: 300,
+    height: 200,
+    transform: [
+      {
+        rotate: '0deg',
+      },
+    ],
+  },
+  activePizzaImage: {
+    transform: [
+      {
+        rotate: '110deg',
+      },
+    ],
+  }
 });
