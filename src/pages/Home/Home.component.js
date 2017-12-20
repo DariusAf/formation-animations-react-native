@@ -39,8 +39,8 @@ export default class Home extends Component {
   hideModal = () => this.setState({ isModalVisible: false, finished: !this.state.finished });
 
   confirmOrder = () => {
-    this.showModal();
-    setTimeout(this.hideModal, 1500);
+    setTimeout(this.showModal, 500);
+    setTimeout(this.hideModal, 2500);
   };
 
   render() {
