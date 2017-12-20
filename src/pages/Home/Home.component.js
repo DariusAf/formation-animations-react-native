@@ -29,8 +29,8 @@ export default class Home extends Component {
   hideModal = () => this.setState({ isModalVisible: false });
 
   confirmOrder = () => {
-    this.showModal();
-    setTimeout(this.hideModal, 1500)
+    setTimeout(this.showModal, 500);
+    setTimeout(this.hideModal, 2500);
   };
 
   render() {
@@ -38,15 +38,15 @@ export default class Home extends Component {
       <Page backgroundColor="rgb(249,249,249)">
         <View style={styles.container}>
           <View style={styles.wrapper}>
+            <View style={styles.textContainer}>
+              <Text style={styles.title}>Pizza quatre-fromages</Text>
+              <Text style={styles.subtitle}>Prix : 8€</Text>
+            </View>
             <Image
               source={require('anibamtion/src/assets/pizza.png')}
               style={{ width: 300, height: 200 }}
               resizeMode="contain"
             />
-            <View style={styles.textContainer}>
-              <Text style={styles.title}>Pizza quatre-fromages</Text>
-              <Text style={styles.subtitle}>Prix : 8€</Text>
-            </View>
           </View>
           <Button text="Valider" onPress={this.confirmOrder} />
         </View>

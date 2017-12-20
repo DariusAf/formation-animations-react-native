@@ -31,6 +31,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     fontSize: 16,
   },
+  animationWrapper: {
+    flex: 1,
+    width: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default class Modal extends Component {
@@ -50,10 +56,7 @@ export default class Modal extends Component {
 
   render() {
     return (
-      <View
-        style={[styles.container, !this.state.visible && { display: 'none' }]}
-        pointerEvents="none"
-      >
+      <View style={[styles.container, !this.state.visible && { display: 'none' }]}>
         <View style={styles.card}>
           <Text style={styles.text}>{this.props.text}</Text>
         </View>
