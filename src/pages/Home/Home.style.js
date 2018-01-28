@@ -11,7 +11,6 @@ export default StyleSheet.create({
     paddingVertical: 20,
   },
   wrapper: {
-    justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
   },
@@ -32,7 +31,8 @@ export default StyleSheet.create({
     textAlign: 'right',
   },
   textContainer: {
-    marginBottom: 40,
+    marginTop: 60,
+    marginBottom: 80,
   },
   button: {
     padding: 10,
@@ -64,8 +64,35 @@ export default StyleSheet.create({
   activePizzaImage: {
     transform: [
       {
-        rotate: '110deg',
+        rotate: '-30deg',
       },
     ],
+  },
+  drawer: {
+    position: 'absolute',
+    height: 700,
+    right: 0,
+    left: 0,
+    bottom: -600,
+    paddingHorizontal: 20,
+    backgroundColor: '#6c8aa7',
+  },
+  drawerIconContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+  },
+  drawerIcon: {
+    height: 5,
+    width: 30,
+    borderRadius: 3,
+    backgroundColor: 'rgba(255,255,255,0.7)'
+  },
+  drawerText: {
+    color: 'white',
+    marginBottom: 20,
+    fontSize: 16,
+    fontFamily: 'Avenir'
   }
 });
