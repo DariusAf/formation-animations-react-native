@@ -8,6 +8,9 @@ export default StackNavigator({
   home: {
     screen: Pages.Home,
   },
+  interactiveList: {
+    screen: Pages.InteractiveList,
+  },
 }, {
-  initialRouteName: 'home',
+  initialRouteName: 'interactiveList',
 });
