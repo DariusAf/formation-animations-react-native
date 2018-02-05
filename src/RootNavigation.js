@@ -15,8 +15,11 @@ export default StackNavigator(
     tonder: {
       screen: Pages.Tonder,
     },
+    progressBar: {
+      screen: Pages.ProgressBar,
+    },
   },
   {
-    initialRouteName: 'tonder',
+    initialRouteName: 'progressBar',
   }
 );

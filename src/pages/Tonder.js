@@ -70,6 +70,7 @@ export default class Tonder extends Component {
           data={this.state.data}
           renderItem={({ item }) => <CardItem {...item} deleteCallback={this.deleteItem} />}
           keyExtractor={item => item.name}
+          scrollEnabled={false}
         />
       </Page>
     );
