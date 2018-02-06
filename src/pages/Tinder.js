@@ -10,7 +10,7 @@ import img4 from 'anibamtion/src/assets/p4.png';
 
 import tonderLogo from 'anibamtion/src/assets/tonder.png';
 
-export default class Tonder extends Component {
+export default class Tinder extends Component {
   static navigationOptions = {
     headerStyle: {
       display: 'none',
@@ -46,17 +46,7 @@ export default class Tonder extends Component {
   };
 
   deleteItem = name => {
-    console.log('delete', name);
     this.setState({ data: this.state.data.filter(item => item.name !== name) });
-  };
-
-  addItem = () => {
-    this.setState({
-      data: [
-        { name: 'Jean Bon', img: 'p1.png', description: "J'aime surtout manger." },
-        ...this.state.data,
-      ],
-    });
   };
 
   render() {

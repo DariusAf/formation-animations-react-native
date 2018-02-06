@@ -12,14 +12,17 @@ export default StackNavigator(
     interactiveList: {
       screen: Pages.InteractiveList,
     },
-    tonder: {
-      screen: Pages.Tonder,
+    tinder: {
+      screen: Pages.Tinder,
     },
     progressBar: {
       screen: Pages.ProgressBar,
     },
+    youtube: {
+      screen: Pages.Youtube,
+    },
   },
   {
-    initialRouteName: 'progressBar',
+    initialRouteName: 'youtube',
   }
 );
