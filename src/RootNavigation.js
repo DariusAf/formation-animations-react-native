@@ -9,20 +9,20 @@ export default StackNavigator(
     home: {
       screen: Pages.Home,
     },
+    progressBar: {
+      screen: Pages.ProgressBar,
+    },
     interactiveList: {
       screen: Pages.InteractiveList,
     },
     tinder: {
       screen: Pages.Tinder,
     },
-    progressBar: {
-      screen: Pages.ProgressBar,
-    },
-    youtube: {
-      screen: Pages.Youtube,
+    music: {
+      screen: Pages.AppleMusic,
     },
   },
   {
-    initialRouteName: 'youtube',
+    initialRouteName: 'music',
   }
 );

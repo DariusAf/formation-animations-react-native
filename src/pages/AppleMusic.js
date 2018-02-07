@@ -6,7 +6,7 @@ import { Page, ProgressBar } from 'anibamtion/src/components';
 
 import album from 'anibamtion/src/assets/album.png';
 
-export default class ProgressBarPage extends Component {
+export default class Music extends Component {
   static navigationOptions = {
     headerStyle: {
       display: 'none',
