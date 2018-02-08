@@ -23,6 +23,6 @@ export default StackNavigator(
     },
   },
   {
-    initialRouteName: 'music',
+    initialRouteName: 'home',
   }
 );
